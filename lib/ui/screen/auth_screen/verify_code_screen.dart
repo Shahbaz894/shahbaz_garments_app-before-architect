@@ -34,20 +34,39 @@ class _VerifyCodeState extends State<VerifyCode> {
           children: [
             SizedBox(height: 50,),
             TextFormField(
-                controller: verificationCodeController,
-                keyboardType: TextInputType.number,
-
-                decoration: InputDecoration(
-                  hintText: '6 digit code',
-                  border: OutlineInputBorder( // Border style
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  focusedBorder: OutlineInputBorder( // Border style when the field is focused
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(color: Colors.blue),
-                  ),
-                )
+              controller: verificationCodeController,
+              keyboardType: TextInputType.number,
+              style: TextStyle(
+                fontSize: 16.0,
+                color: Colors.black,
+              ),
+              decoration: InputDecoration(
+                hintText: '6-digit code',
+                hintStyle: TextStyle(color: Colors.grey.withOpacity(0.8)), // Adjust hint text color
+                contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide(color: Colors.grey.withOpacity(0.6)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: const BorderSide(color: Colors.blue),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide(color: Colors.red),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide(color: Colors.red),
+                ),
+                prefixIcon: Icon(
+                  Icons.security,
+                  color: Colors.grey,
+                ),
+              ),
             ),
+
             SizedBox(height: 50,),
             RoundButton(title: 'Verify', loading: loading, onTap: () async{
               setState(() {

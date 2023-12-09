@@ -21,30 +21,50 @@ class _LoginWithPhoneState extends State<LoginWithPhone> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.green,
         title: Text('Login With Phone No'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 50,),
+            SizedBox(height: 200,),
             TextFormField(
-                controller: phoneController,
-                keyboardType: TextInputType.number,
-
-
-                decoration: InputDecoration(
-                  hintText: '+92 3327332894',
-                  border: OutlineInputBorder( // Border style
-                    borderRadius: BorderRadius.circular(10.0),
+              controller: phoneController,
+              keyboardType: TextInputType.number,
+              style: TextStyle(
+                // Customize the text style (font size, color, etc.)
+                fontSize: 16.0,
+                color: Colors.black,
+              ),
+              decoration: InputDecoration(
+                hintText: '+92 3327332894',
+                contentPadding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0), // Adjust padding
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide(color: Colors.grey.withOpacity(0.6)), // Adjust border color
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide(color: Colors.blue), // Adjust focused border color
+                ),
+                prefixIcon: const Icon(
+                  Icons.phone,
+                  color: Colors.grey, // Adjust icon color
+                ),
+                suffixIcon: GestureDetector(
+                  onTap: () {
+                    phoneController.clear();
+                  },
+                  child: Icon(
+                    Icons.clear,
+                    color: Colors.grey, // Adjust clear icon color
                   ),
-                  focusedBorder: OutlineInputBorder( // Border style when the field is focused
-                    borderRadius: BorderRadius.circular(10.0),
-                    borderSide: const BorderSide(color: Colors.grey),
-                  ),
-                )
+                ),
+              ),
             ),
+
             SizedBox(height: 50,),
             RoundButton(title: 'Add Phone No',
                 loading: loading,

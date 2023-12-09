@@ -38,7 +38,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ),
                   ),
                 ),
-              Padding(padding: EdgeInsets.only(top: 350),
+              Padding(padding: EdgeInsets.only(top: 270),
               child: Column(children: [
                 // const Center(
                 //     child: Text('---SingIn with--- ',style: TextStyle(color: Colors.black,fontSize: 20),)),
@@ -68,7 +68,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ],
                 ),
 
-                SizedBox(height: 50,),
+                SizedBox(height: 40,),
                 Row(
                   children: [
 
@@ -77,7 +77,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         // Your code for handling the Facebook sign-in goes here
                       },
                     ),
-                    const SizedBox(width: 90,),
+                    const SizedBox(width: 50,),
                     googleSignInButton(
                       onPressed: () {
                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
@@ -88,7 +88,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     // Other widgets
                   ],
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(height: 10,),
                 GestureDetector(
                   onTap: (){},
                   child: Container(

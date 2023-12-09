@@ -112,6 +112,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shahbaz_garments_app/ui/provider/product_cart_provider.dart';
 import 'package:shahbaz_garments_app/ui/provider/product_search_provider.dart';
 import 'package:shahbaz_garments_app/ui/screen/product_grid_view_screen.dart';
 import 'package:shahbaz_garments_app/ui/screen/profile_screen.dart';
@@ -130,7 +131,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int currentIndex = 0;
+  //int currentIndex = 0;
   final PageController controller = PageController();
 
   List<String> images = [
@@ -149,6 +150,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final myProductProvider = Provider.of<MyProductProvider>(context);
+    final prCartProvider= Provider.of<ProductCartProvider>(context);
     TextEditingController searchController = TextEditingController();
     final imageUrl = myProductProvider.myDataList;
 
@@ -160,8 +162,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           // Drawer Icon with Badge
           badges.Badge(
-            badgeContent: const Text(
-              '2', // Replace with the actual badge count
+            badgeContent:  Text( prCartProvider.getCounter().toString(),// Replace with the actual badge count
               style: TextStyle(color: Colors.white),
             ),
             position: BadgePosition.topEnd(top: 0, end: 3),

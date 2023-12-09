@@ -75,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         body:  SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(top: 150,left: 8,right: 8),
+            padding: const EdgeInsets.only(top: 120,left: 8,right: 8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -215,7 +215,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 50,),
                 const Text('Or Login With'),
-                SizedBox(height: 50,),
+                SizedBox(height: 35,),
                 Row(
                   children: [
 
@@ -224,7 +224,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         // Your code for handling the Facebook sign-in goes here
                       },
                     ),
-                    SizedBox(width: 90,),
+                    SizedBox(width: 70,),
                     googleSignInButton(
                       onPressed: () {
                         // Your code for handling the Facebook sign-in goes here

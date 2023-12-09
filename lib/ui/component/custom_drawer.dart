@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shahbaz_garments_app/ui/screen/auth_screen/login_screen.dart';
 import 'package:shahbaz_garments_app/ui/screen/cart_screen.dart';
 import 'package:shahbaz_garments_app/ui/screen/dlivery_address_screen.dart';
 import 'package:shahbaz_garments_app/ui/screen/profile_screen.dart';
@@ -76,6 +77,7 @@ class CustomDrawer extends StatelessWidget {
             title: Text('Logout'),
             onTap: () {
               // Handle logout button tap
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
             },
           ),
         ],

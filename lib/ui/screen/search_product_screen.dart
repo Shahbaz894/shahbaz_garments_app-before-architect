@@ -120,56 +120,72 @@ class _SearchProductScreenState extends State<SearchProductScreen> {
 
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: Center(child: const Text('Search Product')),
+      ),
 
       body: Column(
         children: [
 
-          Stack(
-            children: [
-              ClipPath(
-                clipper: WaveClipperTwo(reverse: false),
-                child: Container(
-                  height: 120,
-                  width: double.infinity,
-
-                  color: Colors.green,
-                  // child: Center(child: Text("WaveClipperTwo(reverse: true)")),
-                ),
+            Positioned(
+              top: 20,
+              child: IconButton(
+              icon: Icon(Icons.arrow_back_ios),
+              color: Colors.white,
+              onPressed: () {
+              // Navigate back to the first screen
+              Navigator.pop(context);
+              },
               ),
-
-                Positioned(
-                  top: 20,
-                  child: IconButton(
-                  icon: Icon(Icons.arrow_back_ios),
-                  color: Colors.white,
-                  onPressed: () {
-                  // Navigate back to the first screen
-                  Navigator.pop(context);
-                  },
-                  ),
-                )
-            ],
-          ),
+            ),
           SizedBox(height: 10,),
           Padding(
             padding: const EdgeInsets.all(4.0),
             child:
             Container(
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.black)),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.grey[200], // Set your desired background color
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+              ),
               child: TextFormField(
                 onChanged: (query) {
                   productProvider.fetchProducts(query);
                 },
-                decoration:
-                 InputDecoration(
-
+                decoration: const InputDecoration(
                   labelText: 'Search Product',
                   hintText: 'Enter product name...',
                   prefixIcon: Icon(Icons.search),
+                  border: InputBorder.none, // Remove the border around the TextFormField
                 ),
               ),
             ),
+
+            // Container(
+            //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
+            //   border: Border.all(color: Colors.black)),
+            //   child:
+            //   TextFormField(
+            //     onChanged: (query) {
+            //       productProvider.fetchProducts(query);
+            //     },
+            //     decoration:
+            //      const InputDecoration(
+            //
+            //       labelText: 'Search Product',
+            //       hintText: 'Enter product name...',
+            //       prefixIcon: Icon(Icons.search),
+            //     ),
+            //   ),
+            // ),
           ),
           Expanded(
             child: productProvider.products.isEmpty

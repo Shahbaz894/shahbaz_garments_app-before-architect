@@ -13,24 +13,9 @@ import 'package:shahbaz_garments_app/ui/provider/product_cart_provider.dart';
 import 'package:shahbaz_garments_app/ui/provider/product_search_provider.dart';
 import 'package:shahbaz_garments_app/ui/provider/profile_provider.dart';
 import 'package:shahbaz_garments_app/ui/provider/shipping_addres_provider.dart';
-import 'package:shahbaz_garments_app/ui/screen/auth_screen/login_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/auth_screen/sign_up_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/auth_screen/upload_image_firebase.dart';
-import 'package:shahbaz_garments_app/ui/screen/cart_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/corsal_slider.dart';
-import 'package:shahbaz_garments_app/ui/screen/dlivery_address_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/favorites_screen.dart';
+
 import 'package:shahbaz_garments_app/ui/screen/home_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/location_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/map_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/my_orders.dart';
-import 'package:shahbaz_garments_app/ui/screen/payment_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/product_grid_view_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/profile_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/search_product_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/shipping_address_screen.dart';
 import 'package:shahbaz_garments_app/ui/screen/splash_screen.dart';
-import 'package:shahbaz_garments_app/ui/screen/welcom_screen.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'data/repository/product_reppository.dart';
@@ -104,10 +89,10 @@ class MyApp extends StatelessWidget {
       //home: FavoriteScreen(),
       // home:GoogMapScreen()
      // home: ConvertLatLangToAddress(),
-      home:  HomePage(),
+      //home:  HomePage(),
       //home: ShippingAddressScreen(),
       //home: DeliveryAddressScreen(),
-
+     home: SplashScreen(),
      //home: SignUpScreen(),
      // home: PaymentScreen(),
      // home: MyOrders(),

@@ -47,7 +47,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       alignment: Alignment.center,
                       child: Center(
                         child: Text(
-                          'Your cart is empty 😌',
+                          'No Favourite Product is Added 😌',
                           style: Theme.of(context).textTheme.headlineSmall,
                         ),
                       ),
@@ -122,10 +122,19 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                                           ),
                                                           child: Icon(Icons.add,color: Colors.white,)),
 
-                                                  ))
+                                                  )),
+                                                  Positioned(
+                                                      child:  TextButton(onPressed: (){
+                                                        dbHelperFav.delete(product.id!.toInt());
+                                                      },
+
+                                                          child: Text('Delete',
+                                                            style:TextStyle(color: Colors.red,fontWeight: FontWeight.bold,fontSize: 14)
+                                                            ,)) )
                                                 ],
                                               ),
                                             ),
+
                                           ],
                                         ),
                                       ),
@@ -133,67 +142,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                   ),
                                 )
 
-                                // Padding(
-                                //   padding: const EdgeInsets.all(8.0),
-                                //   child: Container(
-                                //     height: 250,
-                                //     width: 350,
-                                //     decoration: BoxDecoration(
-                                //       borderRadius: BorderRadius.circular(20),
-                                //       border: Border.all(color: Colors.black45),
-                                //     ),
-                                //     child: Column(
-                                //       children: [
-                                //         ClipRRect(
-                                //           borderRadius: BorderRadius.only(
-                                //             topLeft: Radius.circular(20),
-                                //             topRight: Radius.circular(20),
-                                //           ),
-                                //           child: Image(
-                                //             height: 250 / 1.5, // 1/3 of the container height
-                                //             width: double.infinity,
-                                //             fit: BoxFit.cover, // You may need to adjust this to your needs
-                                //             image: NetworkImage(product.image.toString()),
-                                //           ),
-                                //         ),
-                                //         Padding(
-                                //           padding: const EdgeInsets.all(8.0),
-                                //           child: Column(
-                                //             crossAxisAlignment: CrossAxisAlignment.start,
-                                //             children: [
-                                //               Text(
-                                //                 product.title.toString(),
-                                //                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                                //               ),
-                                //               Text(
-                                //                 '\$${product.price}',
-                                //                 style: TextStyle(fontSize: 16, color: Colors.green),
-                                //               ),
-                                //             ],
-                                //           ),
-                                //         ),
-                                //       ],
-                                //     ),
-                                //   ),
-                                // )
 
-                                // Padding(
-                               //   padding: const EdgeInsets.all(8.0),
-                               //   child: Container(
-                               //     height: 250,
-                               //     width: 350,
-                               //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
-                               //     border: Border.all(color: Colors.black45)),
-                               //     child:  Padding(
-                               //       padding: const EdgeInsets.all(8.0),
-                               //       child: Image(
-                               //        // height: 100,
-                               //         //width: 100,
-                               //         image: NetworkImage(product.image.toString()),
-                               //       ),
-                               //     ),
-                               //   ),
-                               // )
                               ],
                             ),
                           );

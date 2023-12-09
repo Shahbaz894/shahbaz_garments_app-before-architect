@@ -292,20 +292,33 @@ class _MyOrdersState extends State<MyOrders> {
                           ),
                         ],
                       ),
+                      SizedBox(height: 100,),
                       Container(
                         height: 100,
                         width: double.infinity,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey, // Choose the border color
+                            width: 1.0, // Choose the border width
+                          ),
+                          borderRadius: BorderRadius.circular(10.0), // Choose the border radius
+                        ),
                         child: ListView.builder(
-                            itemCount: _addressList?.length ?? 0,
-                            itemBuilder: (context, index) {
-                              final address = _addressList![index];
-                              return Column(
-                                children: [
-                                  Text('Address: ${address.address}'),
-                                ],
-                              );
-                            }),
+                          itemCount: _addressList?.length ?? 0,
+                          itemBuilder: (context, index) {
+                            final address = _addressList![index];
+                            return Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Address: ${address.address}',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.black45),),
+                                Text('Address: ${address.mobile}',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.black45),),
+                              ],
+                            );
+                          },
+                        ),
                       ),
+
                     ],
                   ),
                 );

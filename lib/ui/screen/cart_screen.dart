@@ -24,35 +24,29 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     final cart = Provider.of<ProductCartProvider>(context);
     return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.green,),
 
       body: Column(
 
         children: [
-          Stack(
-            children: [
-              ClipPath(
-                clipper: WaveClipperTwo(reverse: false),
-                child: Container(
-                  height: 120,
-                  width: double.infinity,
+          Container(
+            height: 120,
+            width: double.infinity,
 
-                  color: Colors.green,
-                  // child: Center(child: Text("WaveClipperTwo(reverse: true)")),
-                ),
-              ),
+            color: Colors.green,
+            // child: Center(child: Text("WaveClipperTwo(reverse: true)")),
+          ),
 
-              Positioned(
-                top: 20,
-                child: IconButton(
-                  icon: Icon(Icons.arrow_back_ios),
-                  color: Colors.white,
-                  onPressed: () {
-                    // Navigate back to the first screen
-                    Navigator.pop(context);
-                  },
-                ),
-              )
-            ],
+          Positioned(
+            top: 20,
+            child: IconButton(
+              icon: Icon(Icons.arrow_back_ios),
+              color: Colors.white,
+              onPressed: () {
+                // Navigate back to the first screen
+                Navigator.pop(context);
+              },
+            ),
           ),
           FutureBuilder(
             future: cart.getData(),

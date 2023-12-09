@@ -77,6 +77,8 @@ class ProductCartProvider with ChangeNotifier{
     return  _counter ;
 
   }
+
+
   ////////////////////////////
   // void _setCartCounterPref()async{
   //   SharedPreferences prefs = await SharedPreferences.getInstance() ;
